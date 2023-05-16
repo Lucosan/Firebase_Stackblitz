@@ -1,0 +1,14 @@
+<h2> Fire Lista </h2>
+<hr>
+<input [(ngModel)]="text">
+<button (click)="addItem()">Adicionar</button>
+<hr>
+<table>
+  <tr *ngFor="let item of list | async" >
+    <td [title]="['chave: '+item.key]">{{item.text}}</td>
+    <td>
+      <button (click)="removeItem(item.key)">Remover</button>
+    </td>
+  </tr>
+</table>
+
